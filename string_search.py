@@ -1,7 +1,17 @@
 #!python
 
-def in_string(super_str, str):
-    return False
+def in_string(super_str, sub_str):
+    assert isinstance(super_str, str)
+    assert isinstance(sub_str, str)
+
+    return in_string_iterative(super_str, sub_str)
+    # return in_string_recursive(super_str, sub_str)
+
+def in_string_iterative(super_str, sub_str):
+    return True
+
+def in_string_recursive(super_str, sub_str):
+    return True
 
 def main():
     import sys
