@@ -1,16 +1,22 @@
 #!python
 
+def in_string(super_str, str):
+    return False
 
 def main():
     import sys
-    super_string = sys.argv[1]
-    print super_string
-    args = sys.argv[2:]
-    if len(args) > 0:
-        for arg in args:
-            print arg
-
-
+    if len(sys.argv) > 1:
+        super_str = sys.argv[1]
+        args = sys.argv[2:]
+        if len(args) > 0:
+            for arg in args:
+                in_str = in_string(super_str, arg)
+                result = 'PASS' if in_str else 'FAIL'
+                str_in = 'in' if in_str else 'not in'
+                print('{}: {} is {} {}'.format(result, repr(arg), str_in, repr(super_str)))
+    else:
+        print('Usage: {} string1 string2 ... stringN'.format(sys.argv[0]))
+        print('The program checks if string2..stringN are sub strings of string1')
 
 if __name__ == '__main__':
     main()
