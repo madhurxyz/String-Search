@@ -22,21 +22,20 @@ def in_string_iterative(super_str, sub_str):
     sb_str = clean(sub_str)
     sp_len = len(sp_str)
     sb_len = len(sb_str)
-    first = 0
-    last = sb_len
+    left = 0
+    right = sb_len
     check_str = ""
-    while last <= sp_len:
-        for sub_index in range(first, last):
-            check_str = sp_str[first:last]
-        print check_str
+    while right <= sp_len:
+        for sub_index in range(left, right):
+            check_str = sp_str[left:right]
         if check_str == sb_str:
             return True
         else:
-            first += 1
-            last += 1
+            left += 1
+            right += 1
     return False
 
-def in_string_recursive(super_str, sub_str):
+def in_string_recursive(super_str, sub_str, ):
     return True
 
 def main():
