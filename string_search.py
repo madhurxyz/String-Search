@@ -12,15 +12,16 @@ def in_string_iterative(super_str, sub_str):
     sub_l = len(sub_str)
     first = 0
     last = sub_l
+    check_str = ""
     while last <= sup_l:
         for sub_index in range(first, last):
             check_str = super_str[first:last]
-            
-        print check_str
-        first += 1
-        last += 1
-
-    return True
+        if check_str == sub_str:
+            return True
+        else:
+            first += 1
+            last += 1
+    return False
 
 def in_string_recursive(super_str, sub_str):
     return True
