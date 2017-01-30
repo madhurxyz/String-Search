@@ -30,6 +30,11 @@ class StringSearchTest(unittest.TestCase):
         assert in_string('How Are You', 'war') is True
 
     def test_in_string_with_whitespace_and_punctuation(self):
+        assert in_string('back in!!', 'kin') is True
+        assert in_string("store' stack",'rest') is True
+        assert in_string('"how." are, you?', 'war') is True
+
+    def test_in_string_with_whitespace_mixed_casing_and_punctuation(self):
         assert in_string('Back in!!', 'kin') is True
         assert in_string("Store' Stack",'rest') is True
         assert in_string('"How." Are, You?', 'war') is True
