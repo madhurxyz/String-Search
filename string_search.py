@@ -1,5 +1,7 @@
 #!python
 
+#Worst Case: O(m*n)
+#Best Case: Omega(n)
 def in_string(super_str, sub_str):
     assert isinstance(super_str, str)
     assert isinstance(sub_str, str)
@@ -24,11 +26,8 @@ def in_string_iterative(super_str, sub_str):
     sb_len = len(sb_str)
     left = 0
     right = sb_len
-    check_str = ""
     while right <= sp_len:
-        for sub_index in range(left, right):
-            check_str = sp_str[left:right]
-        if check_str == sb_str:
+        if sp_str[left:right] == sb_str:
             return True
         else:
             left += 1
