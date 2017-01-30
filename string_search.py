@@ -12,9 +12,11 @@ def in_string_iterative(super_str, sub_str):
     sub_l = len(sub_str)
     first = 0
     last = sub_l
-    while last is not sup_l + 1:
+    while last <= sup_l:
         for sub_index in range(first, last):
-            print super_str[sub_index]
+            check_str = super_str[first:last]
+            
+        print check_str
         first += 1
         last += 1
 
