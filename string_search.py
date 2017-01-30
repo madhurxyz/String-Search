@@ -8,8 +8,13 @@ def in_string(super_str, sub_str):
     # return in_string_recursive(super_str, sub_str)
 
 def in_string_iterative(super_str, sub_str):
-    sp_str = super_str.lower().replace(' ', '')
     sb_str = sub_str.lower()
+    new_super = super_str.lower().replace(' ', '')
+    delete = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94\''
+    sp_str = ''
+    for letter in new_super:
+        if letter not in delete:
+            sp_str += letter
     sp_len = len(sp_str)
     sb_len = len(sb_str)
     first = 0
