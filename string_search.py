@@ -8,15 +8,18 @@ def in_string(super_str, sub_str):
     # return in_string_recursive(super_str, sub_str)
 
 def in_string_iterative(super_str, sub_str):
-    sup_l = len(super_str)
-    sub_l = len(sub_str)
+    sp_str = super_str.lower()
+    sb_str = sub_str.lower()
+    sp_len = len(sp_str)
+    sb_len = len(sb_str)
     first = 0
-    last = sub_l
+    last = sb_len
     check_str = ""
-    while last <= sup_l:
+    while last <= sp_len:
         for sub_index in range(first, last):
-            check_str = super_str[first:last]
-        if check_str == sub_str:
+            check_str = sp_str[first:last]
+        print check_str
+        if check_str == sb_str:
             return True
         else:
             first += 1
