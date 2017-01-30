@@ -7,14 +7,19 @@ def in_string(super_str, sub_str):
     return in_string_iterative(super_str, sub_str)
     # return in_string_recursive(super_str, sub_str)
 
-def in_string_iterative(super_str, sub_str):
-    sb_str = sub_str.lower()
-    new_super = super_str.lower().replace(' ', '')
+def clean(string):
+    new_str = string.lower().replace(' ', '')
     delete = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94\''
-    sp_str = ''
-    for letter in new_super:
+    clean_str = ''
+    for letter in new_str:
         if letter not in delete:
-            sp_str += letter
+            clean_str += letter
+    return clean_str
+
+
+def in_string_iterative(super_str, sub_str):
+    sp_str = clean(super_str)
+    sb_str = clean(sub_str)
     sp_len = len(sp_str)
     sb_len = len(sb_str)
     first = 0
