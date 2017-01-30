@@ -4,8 +4,8 @@ def in_string(super_str, sub_str):
     assert isinstance(super_str, str)
     assert isinstance(sub_str, str)
 
-    return in_string_iterative(super_str, sub_str)
-    # return in_string_recursive(super_str, sub_str)
+    # return in_string_iterative(super_str, sub_str)
+    return in_string_recursive(super_str, sub_str)
 
 def clean(string):
     new_str = string.lower().replace(' ', '')
@@ -35,8 +35,22 @@ def in_string_iterative(super_str, sub_str):
             right += 1
     return False
 
-def in_string_recursive(super_str, sub_str, ):
-    return True
+def in_string_recursive(super_str, sub_str, left=None, right=None):
+    if left is None and right is None:
+        sp_str = clean(super_str)
+        sb_str = clean(sub_str)
+        sp_len = len(sp_str)
+        sb_len = len(sb_str)
+        left = 0
+        right = sb_len
+
+    if right < sp_len:
+        if sb_str == sp_str[left:right]:
+            return True
+        else:
+            return in_string_recursive(sp_str, sb_str, left + 1, right + 1)
+
+    return False
 
 def main():
     import sys
