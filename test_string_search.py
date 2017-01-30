@@ -17,7 +17,7 @@ class StringSearchTest(unittest.TestCase):
         assert in_string('bb','c') is False
         assert in_string('cat','car') is False
         assert in_string('crate','create') is False #len(sub_str) > len(super_str)
-        assert in_string('watermelon','lemon') is False
+        assert in_string('watermelon','lemon') is False #anagram of sub_str exists but not sub_str itself
         assert in_string('gastronomy','groom') is False
 
 if __name__ == '__main__':
