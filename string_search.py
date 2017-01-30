@@ -36,15 +36,19 @@ def in_string_iterative(super_str, sub_str):
     return False
 
 def in_string_recursive(super_str, sub_str, left=None, right=None):
+    sp_str = clean(super_str)
+    sb_str = clean(sub_str)
+    sp_len = len(sp_str)
+    sb_len = len(sb_str)
+
     if left is None and right is None:
-        sp_str = clean(super_str)
-        sb_str = clean(sub_str)
-        sp_len = len(sp_str)
-        sb_len = len(sb_str)
         left = 0
         right = sb_len
 
-    if right < sp_len:
+    if sp_len == 0 and sb_len == 0:
+        return True
+
+    if right <= sp_len:
         if sb_str == sp_str[left:right]:
             return True
         else:
