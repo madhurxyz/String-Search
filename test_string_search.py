@@ -18,6 +18,11 @@ class StringSearchTest(unittest.TestCase):
         assert in_string('Watermelon','MElon') is True #casing off in the beginning
         assert in_string('CatASTROphe','cAt') is True #truly mixed casing
         assert in_string('GaStRoNoMy','AsTrOnOmY') is True #opposite casing
+        
+    def test_in_string_with_whitespace(self):
+        assert in_string('back in', 'kin') is True
+        assert in_string('store stack','rest') is True
+        assert in_string('how are you', 'war') is True
 
     def test_not_in_string(self):
         assert in_string('a','b') is False
