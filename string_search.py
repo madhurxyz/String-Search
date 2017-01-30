@@ -8,7 +8,7 @@ def in_string(super_str, sub_str):
     # return in_string_recursive(super_str, sub_str)
 
 def in_string_iterative(super_str, sub_str):
-    sp_str = super_str.lower()
+    sp_str = super_str.lower().replace(' ', '')
     sb_str = sub_str.lower()
     sp_len = len(sp_str)
     sb_len = len(sb_str)
